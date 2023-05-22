@@ -1,3 +1,12 @@
+## [1.1.3](https://github.com/e23thr/socketio-chat/compare/v1.1.2...v1.1.3) (2023-05-22)
+
+
+### Bug Fixes
+
+* build for release ([e434d7a](https://github.com/e23thr/socketio-chat/commit/e434d7a5fbb531438fbac5432b0461096268d0b6))
+
+
+
 ## [1.1.2](https://github.com/e23thr/socketio-chat/compare/v1.1.0...v1.1.2) (2023-05-22)
 
 
