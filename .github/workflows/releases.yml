@@ -24,6 +24,13 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Build
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm install
+      - run: npm run build
+
       - name: Create Release
         uses: actions/create-release@v1
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
