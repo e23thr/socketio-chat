@@ -1,9 +1,4 @@
-import {
-  EVENT_JOIN,
-  EVENT_MESSAGE,
-  EVENT_UPLOAD,
-  EVENT_AUTH_TOKEN,
-} from "./types";
+import { EVENT_JOIN, EVENT_MESSAGE, EVENT_UPLOAD, EVENT_AUTH_TOKEN } from "./types";
 
 export type BasePayloadType = {
   type: typeof EVENT_JOIN | typeof EVENT_MESSAGE | typeof EVENT_UPLOAD;
@@ -28,8 +23,4 @@ export type AuthTokenPayloadType = BasePayloadType & {
   token: string;
 };
 
-export type PayloadType =
-  | JoinPayloadType
-  | MessagePayloadType
-  | UploadPayloadType
-  | AuthTokenPayloadType;
+export type PayloadType = JoinPayloadType | MessagePayloadType | UploadPayloadType | AuthTokenPayloadType;
