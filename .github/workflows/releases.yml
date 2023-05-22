@@ -11,12 +11,15 @@ jobs:
       runs-on: ubuntu-latest 
       steps: 
         - uses: actions/checkout@v3 # Checkout our working repository 
+          with:
+            ssh-key: ${{ secrets.SSH_DEPLOY_KEY }}
         - name: Conventional Changelog Action
           id: changelog 
           uses: TriPSs/conventional-changelog-action@v3 
           with: 
-            github-token: ${{ secrets.github_token }}
-            output-file: "false" 
+            # github-token: ${{ secrets.github_token }}
+            output-file: "false"
+
         - uses: actions/setup-node@v3
           with:
             node-version: 16
