@@ -18,24 +18,35 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Use nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18.x"
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      - name: add lib to release
+        run: git add lib
+
       - name: Conventional Changelog Action
         id: changelog
         uses: TriPSs/conventional-changelog-action@v3.18.1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-      - run: npm install
-      - run: npm run build
+      # - name: Archive production artifacts
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     path: lib
 
       - name: Create Release
-        uses: actions/create-release@v1
+        uses: actions/create-release@latest
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with: 
+        with:
           tag_name: ${{ steps.changelog.outputs.tag }}
           prerelease: false
