@@ -1,6 +1,6 @@
 {
-  "name": "vanilla-ts",
-  "version": "0.1.0",
+  "name": "socketio-chat",
+  "version": "0.0.0",
   "type": "module",
   "main": "./dist/socketio-chat.umd.cjs",
   "module": "./dist/socketio-chat.js",
