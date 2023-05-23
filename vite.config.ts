@@ -14,6 +14,13 @@ export default defineConfig({
       name: "socketio-chat",
       fileName: "socketio-chat",
     },
+    minify: true,
+    emptyOutDir: true,
+  },
+  esbuild: {
+    minifySyntax: true,
+    minifyWhitespace: true,
+    minifyIdentifiers: true,
   },
   plugins: [dts()],
   test: {},
