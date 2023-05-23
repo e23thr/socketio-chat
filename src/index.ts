@@ -8,7 +8,8 @@ class Chat {
   }
 }
 
-if (window) {
+if (typeof window !== "undefined") {
+  console.log("window is defined");
   window.addEventListener("load", () => {
     (window as any).ChatClient = new Chat();
   });

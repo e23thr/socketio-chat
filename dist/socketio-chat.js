@@ -1,11 +1,11 @@
-const n = "auth_token", t = "join", e = "message", s = "upload", i = "advertise";
-function E(o) {
-  return o.type === t && typeof o.room == "string" && !!o.room;
+const n = "auth_token", e = "join", t = "message", s = "upload", i = "advertise";
+function f(o) {
+  return o.type === e && typeof o.room == "string" && !!o.room;
 }
 function c(o) {
-  return o.type === e && typeof o.message == "string" && !!o.message && typeof o.room == "string" && !!o.room;
+  return o.type === t && typeof o.message == "string" && !!o.message && typeof o.room == "string" && !!o.room;
 }
-function f(o) {
+function E(o) {
   return o.type === s && o.file instanceof File && typeof o.room == "string" && !!o.room;
 }
 function u(o) {
@@ -19,18 +19,18 @@ class r {
     console.log("Chat");
   }
 }
-window && window.addEventListener("load", () => {
+typeof window < "u" && (console.log("window is defined"), window.addEventListener("load", () => {
   window.ChatClient = new r();
-});
+}));
 export {
   i as EVENT_ADVERTISE,
   n as EVENT_AUTH_TOKEN,
-  t as EVENT_JOIN,
-  e as EVENT_MESSAGE,
+  e as EVENT_JOIN,
+  t as EVENT_MESSAGE,
   s as EVENT_UPLOAD,
   g as isAdvertisePayload,
   u as isAuthTokenPayload,
-  E as isJoinPayload,
+  f as isJoinPayload,
   c as isMessagePayload,
-  f as isUploadPayload
+  E as isUploadPayload
 };
