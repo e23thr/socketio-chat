@@ -34,14 +34,6 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: add lib to release
-        run: git add -f lib
-
-      # - name: Archive production artifacts
-      #   uses: actions/upload-artifact@v3
-      #   with:
-      #     path: lib
-
       - name: Create Release
         uses: actions/create-release@latest
         if: ${{ steps.changelog.outputs.skipped == 'false' }}
@@ -49,4 +41,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.changelog.outputs.tag }}
+          release_name: ${{ steps.changelog.outputs.tag }}
           prerelease: false
