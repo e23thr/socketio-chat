@@ -1,3 +1,12 @@
+## [0.0.1](https://github.com/e23thr/socketio-chat/compare/v0.1.0...v0.0.1) (2023-05-23)
+
+
+### Bug Fixes
+
+* umd js ([3899aa6](https://github.com/e23thr/socketio-chat/commit/3899aa65c462828aecaa61cb5c2cb5706ff95ad3))
+
+
+
 # [0.1.0](https://github.com/e23thr/socketio-chat/compare/v1.2.0...v0.1.0) (2023-05-23)
 
 
